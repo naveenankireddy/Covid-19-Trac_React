@@ -3,16 +3,28 @@ import "./App.css";
 import Header from "./components/Header";
 
 function App() {
+  //countries list
   const [countries, setCountries] = useState([]);
   console.log(countries, "countries");
+  //single country
+  const [country, setCountry] = useState("Worldwide");
+
+  //handle countryChange function
+  const onCountryChange = async (event) => {
+    const countryCode = event.target.value;
+    console.log("countrycode", countryCode);
+    setCountry(countryCode);
+  };
+
+  //get the data and map into header input field
   useEffect(() => {
     const getCountriesData = async () => {
       await fetch(`https://disease.sh/v3/covid-19/countries`)
         .then((response) => response.json())
         .then((data) => {
           let countries = data.map((country) => ({
-            name: country.country,
-            value: country.countryInfo.iso2,
+            name: country.country, //united States
+            value: country.countryInfo.iso2, //country code
           }));
           setCountries(countries);
         });
@@ -22,7 +34,11 @@ function App() {
 
   return (
     <div className="main-section">
-      <Header countries={countries} />
+      <Header
+        countries={countries}
+        country={country}
+        onCountryChange={onCountryChange}
+      />
       {/* title + select input dropdown */}
       {/* Info Boxes */}
       {/* Info Boxes */}
