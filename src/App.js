@@ -8,6 +8,7 @@ function App() {
   console.log(countries, "countries");
   //single country
   const [country, setCountry] = useState("Worldwide");
+  console.log(country, "hey i'm country");
 
   //handle countryChange function
   const onCountryChange = async (event) => {
@@ -39,10 +40,7 @@ function App() {
         country={country}
         onCountryChange={onCountryChange}
       />
-      {/* title + select input dropdown */}
-      {/* Info Boxes */}
-      {/* Info Boxes */}
-      {/* Info Boxes */}
+
       {/* Table */}
       {/* Graph */}
       {/* Map */}
