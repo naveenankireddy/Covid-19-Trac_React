@@ -15,7 +15,7 @@ function App() {
   const [countryInfo, setCountryInfo] = useState({});
 
   //country table list
-  const [tableData, setTableData] = useEffect([]);
+  const [tableData, setTableData] = useState([]);
 
   //handle countryChange function
   const onCountryChange = async (event) => {
@@ -71,14 +71,13 @@ function App() {
 
         <Map />
       </div>
-      <div className="side-section">
-        <Card>
-          <CardContent>
-            <h2>Live cases by country</h2>
-            <Table countries={tableData} />
-          </CardContent>
-        </Card>
-      </div>
+      <Card className="side-section">
+        <CardContent>
+          <h2>Live cases by country</h2>
+          <Table countries={tableData} />
+          <h2>Worldwide cases</h2>
+        </CardContent>
+      </Card>
     </div>
   );
 }
