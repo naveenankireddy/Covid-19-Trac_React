@@ -2,7 +2,13 @@ import { FormControl, MenuItem, Select } from "@material-ui/core";
 import React from "react";
 import "../App.css";
 import InfoCard from "./InfoCard";
-export default function Header({ countries, country, onCountryChange }) {
+
+export default function Header({
+  countries,
+  country,
+  onCountryChange,
+  countryInfo,
+}) {
   console.log("countries", countries);
 
   return (
@@ -19,9 +25,21 @@ export default function Header({ countries, country, onCountryChange }) {
         </FormControl>
       </div>
       <div className="app__card">
-        <InfoCard title="Carona 1" cases={1234} total={999999} />
-        <InfoCard title="Carona 1" cases={1234} total={999999} />
-        <InfoCard title="Carona 1" cases={1234} total={999999} />
+        <InfoCard
+          title="Caronavirus Cases"
+          cases={countryInfo.todayCases}
+          total={countryInfo.cases}
+        />
+        <InfoCard
+          title="Recovered"
+          cases={countryInfo.todayRecovered}
+          total={countryInfo.recovered}
+        />
+        <InfoCard
+          title="Deaths"
+          cases={countryInfo.deaths}
+          total={countryInfo.deaths}
+        />
       </div>
     </div>
   );

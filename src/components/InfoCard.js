@@ -6,10 +6,10 @@ export default function InfoCard({ title, cases, total }) {
     <Card>
       <CardContent>
         {/* title */}
-        <Typography color="textSecondary">{title}title</Typography>
+        <Typography color="textSecondary">{title}</Typography>
 
         {/* number of cases */}
-        <h2>cases:{cases}</h2>
+        <h2>{cases}</h2>
         {/* total */}
         <Typography color="textSecondary">total:{total}</Typography>
       </CardContent>
