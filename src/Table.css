@@ -3,6 +3,7 @@
   height: 400px;
   margin-top: 20px;
   background-color: #92bee7;
+  scroll-behavior: smooth;
 }
 
 .table tr {

@@ -4,6 +4,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Map from "./components/Map";
 import Table from "./components/Table";
+import { sortData } from "./utils.js";
 
 function App() {
   //countries list
@@ -52,7 +53,8 @@ function App() {
             name: country.country, //united States
             value: country.countryInfo.iso2, //country code
           }));
-          setTableData(data);
+          const sortedData = sortData(data);
+          setTableData(sortedData);
           setCountries(countries);
         });
     };
